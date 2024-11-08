@@ -55,6 +55,10 @@ function M.get_geometry(target_win)
 
   return {
     should_hide = height >= buf_height,
+    buf_height = {
+      buf_height = buf_height,
+      topline = start_line,
+    },
     thumb = vim.tbl_deep_extend('force', common_geometry, { height = thumb_height, zindex = zindex + 2 }),
     gutter = vim.tbl_deep_extend('force', common_geometry, { row = 0, height = height, zindex = zindex + 1 }),
   }
